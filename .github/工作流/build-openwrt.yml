@@ -69,6 +69,10 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
+      run: git https://github.com/wiwizcom/WiFiPortal.git
+      run: cp -r DCC2-wiwiz openwrt/package/
+      run: cp -r eqos-master-wiwiz openwrt/package/
+      run: cp -r wifidog-wiwiz openwrt/package/
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
